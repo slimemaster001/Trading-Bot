@@ -1,3 +1,14 @@
-discord.py==2.3.2
-yfinance==0.2.54
-requests==2.32.3
+# Core
+alpaca-py>=0.28.0
+yfinance>=0.2.54
+pandas>=2.0.0
+numpy>=1.24.0
+requests>=2.32.3
+python-dotenv>=1.0.0
+
+# Discord bot
+discord.py>=2.3.2
+
+# Utilities
+pytz>=2024.1
+tabulate>=0.9.0

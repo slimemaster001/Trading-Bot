@@ -1,8 +1,39 @@
 # Guardrails & Configuration
 
-> This file is read by the agent at the start of every routine.  
-> Changes here take immediate effect on the next routine run.  
-> Do not modify this file while a routine is running.
+> This file is read by the bot at startup and by Claude during periodic reviews.
+> Changes here take immediate effect on the next run.
+> Do not modify this file while a trade session is active.
+
+---
+
+## 🆕 Day Trading Mode (v2.0)
+
+The bot now runs as an **intraday day-trading system**.  
+Every position is opened after 9:45 AM ET and closed by 3:30 PM ET the same day.  
+No overnight holds.
+
+### Day Trading Limits
+
+| Rule | Value | Notes |
+|------|-------|-------|
+| Position size per trade | 5% of equity | ~$5,000 at $100k |
+| Max simultaneous positions | 3 | = 15% deployed max |
+| Stop loss (day trade) | 2% below entry | Tighter than swing stops |
+| Take profit (day trade) | 4% above entry | 2:1 risk/reward minimum |
+| Entry window | 9:45 AM – 2:45 PM ET | No entries in first 15 min or last 75 min |
+| EOD force-close | 3:30 PM ET | All positions closed regardless of P&L |
+| Minimum position score | 6.0 / 10 | Don't trade anything with final_score < 6 |
+| Scanner universe | ~200 stocks | See config/universe.json |
+| Ollama model | auto-detected | Set OLLAMA_MODEL env var to override |
+
+### Pattern Day Trader (PDT) Warning
+
+⚠️ If trading a **live account under $25,000**, Alpaca will enforce PDT rules:  
+max 3 day-trades per rolling 5 business days.  
+In **PAPER** mode this does not apply.  
+Switch to LIVE only after $25k equity OR limit to 3 round-trips/week.
+
+---
 
 ---
 
@@ -21,15 +52,32 @@ TRADING_MODE = PAPER
 
 ---
 
+## Starting Capital
+
+```
+STARTING_CAPITAL = $100,000   (Alpaca paper account default)
+```
+
+Use the current portfolio equity (from Alpaca `/v2/account → equity`) for all percentage calculations — not the starting capital. Starting capital is recorded here for benchmarking only.
+
+---
+
 ## Position Limits
 
-| Rule | Value |
-|------|-------|
-| Max single position size | 15% of portfolio |
-| Typical new position size | 5–10% of portfolio |
-| Max sector concentration | 35% of portfolio |
-| Max open positions | 10 |
-| Minimum cash reserve | 10% of portfolio |
+| Rule | Value | Dollar equivalent at $100k |
+|------|-------|---------------------------|
+| Max single position size | 15% of portfolio | ~$15,000 |
+| Typical new position size | 5–10% of portfolio | $5,000–$10,000 |
+| First trade / new strategy | 5% of portfolio | ~$5,000 |
+| Max sector concentration | 35% of portfolio | ~$35,000 |
+| Max open positions | 10 | — |
+| Minimum cash reserve | 10% of portfolio | ~$10,000 |
+
+**How to calculate share count:**
+1. Decide position size % (e.g. 7%)
+2. Multiply by current portfolio equity (e.g. $100,000 × 7% = $7,000)
+3. Divide by entry price (e.g. $7,000 ÷ $180.00 = 38 shares)
+4. Round down to whole shares — never round up
 
 **If any limit would be violated by a new trade → abort the trade and log the reason.**
 

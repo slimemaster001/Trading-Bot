@@ -1,0 +1,26 @@
+{
+  "momentum": {
+    "stop": 0.02,
+    "tp": 0.06,
+    "trail": 0.02,
+    "max_hold": 2
+  },
+  "breakout": {
+    "stop": 0.03,
+    "tp": 0.08,
+    "trail": 0.03,
+    "max_hold": 3
+  },
+  "gap_and_go": {
+    "stop": 0.03,
+    "tp": 0.06,
+    "trail": 0.03,
+    "max_hold": 3
+  },
+  "mean_reversion": {
+    "stop": 0.03,
+    "tp": 0.1,
+    "trail": 0.03,
+    "max_hold": 5
+  }
+}

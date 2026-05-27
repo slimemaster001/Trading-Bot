@@ -1,0 +1,34 @@
+{
+  "_comment": "Scoring weights for the day-trading scanner. Updated automatically by learner/learner.py after each trading cycle. Do not edit by hand unless you know what you're doing — the learner will overwrite these.",
+  "last_updated": "2026-05-23 (initial seed)",
+  "blend": {
+    "_comment": "How much weight to give AI (Ollama) score vs technical rule score in final ranking",
+    "ai_weight":   0.65,
+    "tech_weight": 0.35
+  },
+  "technical": {
+    "_comment": "Additive score adjustments for individual technical signals (+/- from baseline 5.0)",
+    "rsi_sweet":    1.5,
+    "rsi_mid":      0.5,
+    "rsi_high":     0.5,
+    "rsi_ob":       2.0,
+    "rsi_os":       2.0,
+    "pm_ideal":     2.0,
+    "pm_large":     0.5,
+    "pm_gap":       1.0,
+    "pm_neg":       1.5,
+    "rv_high":      2.0,
+    "rv_med":       1.0,
+    "rv_slight":    0.5,
+    "rv_low":       1.0,
+    "above_both_ma": 1.0,
+    "above_ma20":    0.5,
+    "below_ma20":    1.0,
+    "near_high":     1.5,
+    "mid_range":     0.5,
+    "deep_pullback": 0.5,
+    "ret5_strong":   1.0,
+    "ret5_ok":       0.5,
+    "ret5_weak":     1.0
+  }
+}

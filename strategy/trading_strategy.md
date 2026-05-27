@@ -80,6 +80,8 @@ Each pre-market session, the agent should research:
 3. Individual catalysts: Earnings, analyst upgrades/downgrades, news for held positions
 4. Watchlist: 2–3 new potential entries based on screener signals
 
+**Watchlist Minimum Depth Rule (added 2026-05-15):** The active watchlist must always contain a minimum of 5 candidates across at least 2 sectors. If all candidates in one sector are simultaneously blocked (by guardrails, FOMO, or RSI), there must be at least 1–2 actionable setups in other sectors. If the watchlist has fewer than 2 non-blocked candidates, the pre-market routine must add new candidates before evaluating existing ones.
+
 ---
 
 ## 7. Market Conditions Framework
@@ -90,6 +92,7 @@ Each pre-market session, the agent should research:
 | S&P 500 below 200-day MA but recovering | Cautious — reduce position sizes by 50% |
 | S&P 500 in confirmed downtrend | Defensive — hold mostly cash and ETF hedges |
 | High volatility (VIX > 30) | Reduce all positions, widen stops or exit |
+| **Rate hike probability >30% (CME FedWatch)** | **Cautious — max 5% per position, focus on high-RS names with confirmed earnings growth, monitor 10-year yield. If 10-yr >4.5%, treat as additional headwind.** |
 
 ---
 
@@ -115,4 +118,4 @@ Every Friday after market close, the agent reviews:
 
 ---
 
-*Last updated: 2026-04-24*
+*Last updated: 2026-05-15 (Weekly review — added rate hike condition + watchlist depth rule)*

@@ -1,0 +1,84 @@
+{
+  "version": "1.3",
+  "description": "Swing/day-trading universe — mid/small-cap US stocks and ADRs. Mega-caps excluded. Filters applied at scan time. Expanded 2026-05-24: added ~70 tickers across 4 new sectors for robust cross-validation.",
+  "filters": {
+    "min_price_usd": 5,
+    "max_price_usd": 300,
+    "min_avg_daily_volume": 500000,
+    "min_market_cap_millions": 300,
+    "max_market_cap_billions": 30
+  },
+  "sectors": {
+    "tech_software_ai": [
+      "CRWD","ZS","DDOG","NET","MDB","GTLB","BILL","DOCN","APP",
+      "DUOL","RBLX","U","SOUN","IONQ","PATH","ASAN","MNDY","FOUR","NTNX",
+      "BRZE","AMPL","KVYO","AI","PLTR","BBAI","PEGA","PCOR","HUBS",
+      "PAYC","SPSC","NCNO","PYCR","WEAV","FLYW","ALKT",
+      "ACMR","ONTO","WOLF","AEHR","FORM","POWI","DIOD","QRVO","SWKS","SLAB"
+    ],
+    "tech_growth_saas": [
+      "ROKU","TWLO","ESTC","ZI","JAMF","APPN","MGNI","PUBM","BOX",
+      "LSPD","CARG","BIGC","SMAR","ALRM","TASK","PROS","APPF","COUP",
+      "DOMO","INTA","CLPS","MTTR","DSGN","MAPS","FROG"
+    ],
+    "semiconductors_mid": [
+      "SMCI","MRVL","MPWR","ENTG","ACLS","COHU","AMBA","AXTI","AEIS","IMOS"
+    ],
+    "semiconductors_growth": [
+      "WOLF","AEHR","ONTO","ACMR","FORM","DIOD","POWI","NVTS","OLED",
+      "ALGM","PSIX","LASR","IIVI","MKSI","CEVA","SIFY"
+    ],
+    "biotech_pharma": [
+      "RXRX","CRSP","EDIT","BEAM","VKTX","AXSM","NVAX","HIMS","DOCS",
+      "SDGR","EXEL","RARE","SRPT","ALNY","IMVT","RVMD","VERA","GKOS",
+      "IRTC","TMDX","ACAD","MDGL","KRYS","NUVL","RCKT","PRCT","INSP","TNDM",
+      "AGEN","OCUL","FOLD","ARQT","PTGX","KROS","ARWR","RGEN","PACB",
+      "SRRK","ZNTL","KYMR","INSM","RVNC"
+    ],
+    "biotech_clinical": [
+      "PRAX","DNLI","ARVN","MRUS","VCEL","FATE","ADMA","ALKS","KPTI",
+      "INVA","DICE","ABCL","NUVB","IMTX","VRDN","PMVP","MNKD","NVRO",
+      "NVCR","QDEL","AXNX","FLGT","PGNY","ACCD"
+    ],
+    "fintech_digital_finance": [
+      "SOFI","UPST","AFRM","LC","PFSI","UWMC","RKT","OPEN","OPFI",
+      "ENVA","IBKR","MARA","RIOT","HUT","CLSK","IREN","CORZ","BTBT","COIN",
+      "HOOD","PAGS","FUTU","SEER","JMIA"
+    ],
+    "consumer_retail_entertainment": [
+      "CHWY","DKNG","PENN","BURL","FIVE","CROX","ONON","CAVA","SHAK","YETI",
+      "FRPT","HNST","VITL","CELH","SKIN","GSHD","SG","BYND",
+      "LIDR","SEAT","MAPS","BMBL","WRBY","BIRD","XPOF"
+    ],
+    "consumer_food_restaurants": [
+      "BROS","WING","JACK","EAT","TXRH","LOCO","BJRI","FAT","CHUY",
+      "NAPA","CAKE","HAYW","DRI","CBRL","STRL","PTLO","DENN","JACK"
+    ],
+    "energy_oil_gas": [
+      "RIG","VAL","NOV","SM","MTDR","CNX","AR","CRGY",
+      "HLX","KOS","BORR","NE","TALO","NOG","PTEN","OVV","BATL",
+      "VTLE","GRNT","MNRL"
+    ],
+    "ev_clean_energy_space": [
+      "JOBY","ACHR","ARRY","SPWR","FSLR","RUN",
+      "FLNC","STEM","CSIQ","CHPT","LCID","WKHS","LUNR","RDW","SPCE",
+      "ENVX","FREYR","MVST","NXRT","BE"
+    ],
+    "defense_aerospace_industrial": [
+      "KTOS","MOOG","HWM","BWXT","SPR","HEICO","SAIC","CACI",
+      "TDY","CW","DRS","AVAV","RKLB","ATRO","FLIR","OSK","AXON"
+    ],
+    "healthcare_devices_services": [
+      "NVCR","NVRO","INSP","MASI","ITGR","LIVN","LQDA","QDEL",
+      "PGNY","ACCD","FTRE","FLGT","ONEM","PHR","DOCS","HIMS"
+    ],
+    "international_adrs": [
+      "BABA","JD","PDD","SE","MELI","ASML","TSM","SHOP","SPOT","ARM",
+      "GRAB","LI","NIO","XPEV","WB","BEKE","VALE","ITUB","VNET","RLX",
+      "TME","HUYA","TIGR","NU","PAGS"
+    ],
+    "sector_etfs": [
+      "XBI","SMH","ARKK","SOXX","KWEB","XLE","XLF","MSOS","BOTZ","CIBR"
+    ]
+  }
+}

@@ -12,3 +12,18 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Market data / backtest output (runtime artifacts, not source)
+memory/backtest_*.json
+memory/backtest_trades_*.json
+memory/intraday_*.json
+memory/intraday_cache/
+memory/intraday_results/
+memory/swing_results/
+memory/earnings_cache.json
+memory/optimizer_results.json
+memory/paper_track_*.json
+memory/trade_results.json
+
+# Personal notes
+"Obsidian Vault/"
